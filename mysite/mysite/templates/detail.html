@@ -1,0 +1,19 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+  </head>
+  <body>
+    <div>
+      {% if cafes %}
+        Название: {{ cafes.name }}
+        Вместительность: {{ cafes.capacity }}
+        Адрес: {{ cafes.address }}
+        Широта: {{ cafes.latitude }}
+        Долгота: {{ cafes.longitude }}
+      {% endif %}
+    </div>
+  </body>
+</html>

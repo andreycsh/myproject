@@ -1,0 +1,63 @@
+<html>
+<title>aaaaaaaaaaaa</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+	
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#button-to-click").click(function(){
+			$.ajax({
+				url:"/drf.json",
+				success: function(result){
+					alert(result.data);
+				}
+			});
+		});
+	});
+</script>
+
+
+<body>
+	{% load filters %}
+	AAA
+	<table>
+		{% for row in rows %}
+			<tr>
+				{% for r in row %}
+			
+				<td>{{r}}</td>
+				
+		
+				{% endfor %}
+				
+			</tr>
+		{% endfor %}
+	</table>
+	<table>
+		{% for i in size %}
+			<tr>
+				
+			
+				<td>{{lat|lookup:i}}</td>
+				
+		
+			
+				
+			</tr>
+		{% endfor %}
+	</table>
+	
+<!--	<div id = "map" >
+	
+	</div> !-->
+	<button id ="button-to-click">CLICK!!</button>
+	
+	<form action=""  method="post">{% csrf_token %}
+		<label for ="your_name"> Vopros : </label>
+		<input id="lat" type="text" name="lat" value ="">
+		<input type = "submit" value = "OK">
+	</form>
+</body>
+</html>
